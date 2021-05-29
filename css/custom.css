@@ -1,0 +1,33 @@
+.bg-code {
+  background: url("../img/code.jpg");
+}
+
+.text_custom {
+  background-color: black;
+  opacity: 60%;
+  color: white;
+}
+
+.custom_card {
+  border-color: #2196f3;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.21);
+}
+
+.bg_custom {
+  background: rgba(245,245,245,0.7);
+}
+
+.nav-item:hover {
+  position: sticky;
+  top: 0;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #ffffff;  
+  border-radius: .25rem;
+}
+
+.nav-item {
+  border: 1px solid rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
+  border-radius: .25rem;
+}
