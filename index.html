@@ -14,7 +14,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/logo_jk.png">
     <title>Jordy's Profile</title>
 
     <!-- Vendor stylesheets -->
@@ -49,7 +49,8 @@ License URL: https://creativecommons.org/licenses/by/4.0/
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top wow animated fadeIn" id="sideNav" style="display: none;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top wow animated fadeIn" id="sideNav" style="visibility: hidden;display: none;" data-wow-duration="2s">
+
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none  mx-0 px-0"><img src="img/logo-white.png" alt="" class="img-fluid"></span>
         <span class="d-none d-lg-block">
@@ -80,7 +81,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
         </div>
     </nav>
 
-    <div class="container-fluid p-0 wow animated fadeIn" style="display: none;">
+    <div class="container-fluid p-0 wow animated fadeIn" style="visibility: hidden;display: none;" data-wow-duration="2s" data-wow-delay="1s">
     <!--====================================================
                         ABOUT
     ======================================================-->
@@ -91,7 +92,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
             </div>
             <div class="col-lg-12">
               <div class="my-auto post_loader" >
-              <img src="img/logo-s.png" class="img-fluid mb-3" alt="" style="opacity: 0%;">
+              <img src="img/logo_jk.png" class="img-fluid mb-3" alt="" width="27%">
                 <h1 class="mb-0">
                   <span class="text-white">Jordy Kristianata</span>
                 </h1>
@@ -116,8 +117,8 @@ License URL: https://creativecommons.org/licenses/by/4.0/
                           </span>
                         </a>
                     </li>
-                    <li class="list-inline-item wow animated zoomIn" data-toggle="tooltip" data-placement="top" title="Github">
-                        <a href="https://github.com/jordyk0906" target="_blank">
+                    <li class="list-inline-item wow animated zoomIn" data-toggle="tooltip" data-placement="top" title="GitHub">
+                        <a href="https://github.com/jordy-k" target="_blank">
                           <span class="fa-stack fa-lg">
                             <i class="fa fa-circle fa-stack-2x"></i>
                             <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -220,30 +221,52 @@ License URL: https://creativecommons.org/licenses/by/4.0/
           <div class="row text-center my-auto "> 
               <div class="col-md-3 col-sm-6">
                   <div class="skill-item">
-                      <i class="fa fa-html5 fa-5x"></i>
-                      <h2><span class="counter"> 84 </span><span>%</span></h2>
-                      <p>HTML5</p>
+                    <div class="row">
+                      <div class="col-lg-12 text-center">
+                        <img src="img/coding-skills/html.png" width="40%" height="100%" />
+                      </div>
+                    </div>
+                    <p>HTML</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6">
                   <div class="skill-item">
-                      <i class="fa fa-css3 fa-5x"></i>
-                      <h2><span class="counter"> 95 </span><span>%</span></h2>
-                      <p>CSS3</p>
+                    <div class="row">
+                      <div class="col-lg-12 text-center">
+                        <img src="img/coding-skills/css.png" width="40%" height="100%" />
+                      </div>
+                    </div>
+                    <p>CSS</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6">
                   <div class="skill-item">
-                      <i class="fa fa-code fa-5x"></i>
-                      <h2><span class="counter"> 65 </span><span>%</span></h2>
-                      <p>JQuery</p>
+                    <div class="row">
+                      <div class="col-lg-12 text-center">
+                        <img src="img/coding-skills/js.png" width="40%" height="100%" />
+                      </div>
+                    </div>
+                    <p>Javascript</p>
                   </div>
               </div>
               <div class="col-md-3 col-sm-6">
                   <div class="skill-item">
-                      <i class="fa fa-globe fa-5x"></i>
-                      <h2><span class="counter"> 89 </span><span>%</span></h2>
-                      <p>PHP</p>
+                    <div class="row">
+                      <div class="col-lg-12 text-center">
+                        <img src="img/coding-skills/php.png" width="40%" height="100%" />
+                      </div>
+                    </div>
+                    <p>PHP</p>
+                  </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                  <div class="skill-item">
+                    <div class="row">
+                      <div class="col-lg-12 text-center">
+                        <img src="img/coding-skills/jquery.png" width="40%" height="100%" />
+                      </div>
+                    </div>
+                    <p>jQuery</p>
                   </div>
               </div>
           </div>
@@ -255,51 +278,36 @@ License URL: https://creativecommons.org/licenses/by/4.0/
                           CONTACT
     ======================================================-->       
       <section class="resume-section p-3 p-lg-5 d-flex flex-column">
-          <div class="row my-auto post_loader" id="contact"> 
-            <div class="col-md-8">
-              <div class="contact-cont">
-                <h3>CONTACT Us</h3>
-                <div class="heading-border-light"></div>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
-              </div>   
-              <div class="row con-form">
-                <div class="col-md-12">
-                  <input type="text" name="full-name" placeholder="Full Name" class="form-control">
-                </div>
-                <div class="col-md-12">
-                  <input type="text" name="email" placeholder="Email Id" class="form-control">
-                </div>
-                <div class="col-md-12">
-                  <input type="text" name="subject" placeholder="Subject" class="form-control">
-                </div>
-                <div class="col-md-12"><textarea name="" id=""></textarea></div>
-                <div class="col-md-12 sub-but"><button class="btn btn-general btn-white" role="button">Send</button></div>
+          <div class="row my-auto post_loader" id="contact">
+            <div class="col-lg-12">
+                <h2 class="text-center">Contacts</h2>
+                <div class="mb-5 heading-border"></div>
               </div>
-            </div>
-            <div class="col-md-4 col-sm-12 mt-5"> 
-              <div class="contact-cont2"> 
-                <div class="contact-add contact-box-desc">
+            <div class="col-lg-4"> 
+              <!-- <div class="contact-cont2">  -->
+                <!-- <div class="contact-add contact-box-desc"> -->
                   <h3><i class="fa fa-map-marker cl-atlantis fa-2x"></i> Address</h3>
-                  <p>25, Dist town Street, Logn <br>
-                  California, US <br></p>
-                </div>
-                <div class="contact-phone contact-side-desc contact-box-desc">
-                  <h3><i class="fa fa-phone cl-atlantis fa-2x"></i> Phone</h3>
-                  <p>800 123 3456 <br>900 123 3457</p>
-                </div>
-                <div class="contact-mail contact-side-desc contact-box-desc">
+                  <p>Jalan Tanjung Gedong, No 21, RT 002/RW 016, Kel. Tomang, Kec. Grogol Petamburan, Jakarta Barat.</p>
+                <!-- </div> -->
+              <!-- </div> -->
+            </div>
+            <div class="col-lg-4">
+              <!-- <div class="contact-cont2"> -->
+                <!-- <div class="contact-phone contact-side-desc contact-box-desc"> -->
+                  <h3><i class="fa fa-whatsapp cl-atlantis fa-2x"></i> Mobile / WhatsApp</h3>
+                  <a href="https://wa.me/6282135143924" target="_blank">0821351439</a>
+                <!-- </div> -->
+              <!-- </div> -->
+            </div>
+            <div class="col-lg-4">
+              <!-- <div class="contact-cont2"> -->
+                <!-- <div class="contact-mail contact-side-desc contact-box-desc"> -->
                   <h3><i class="fa fa-envelope-o cl-atlantis fa-2x"></i> Email</h3>
-                <address class="address-details-f"> 
-                  Fax: 800 123 3456 <br>
-                  Email: <a href="mailto:info@themsbit.com" class="">info@themsbit.com</a>
-                </address>
-                <ul class="list-inline social-icon-f top-data">
-                  <li><a href="#" target="_empty"><i class="fa top-social fa-facebook" style="color: #4267b2; border-color:#4267b2;"></i></a></li>
-                  <li><a href="#" target="_empty"><i class="fa top-social fa-twitter" style="color: #4AB3F4; border-color:#4AB3F4;"></i></a></li>
-                  <li><a href="#" target="_empty"><i class="fa top-social fa-google-plus" style="color: #e24343; border-color:#e24343;"></i></a></li> 
-                </ul>
-                </div>
-              </div>
+                  <address class="address-details-f">
+                    <a href="mailto:jordykristianata@gmail.com" class="">jordykristianata@gmail.com</a>
+                  </address>
+                <!-- </div> -->
+              <!-- </div> -->
             </div> 
           </div>
       </section>
@@ -395,13 +403,6 @@ License URL: https://creativecommons.org/licenses/by/4.0/
         });
 
         // SKILLS
-        $(function () {
-            $('.counter').counterUp({
-                delay: 10,
-                time: 2000
-            });
-
-        });
 
         $(function () {
           $('[data-toggle="tooltip"]').tooltip({
