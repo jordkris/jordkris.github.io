@@ -240,7 +240,7 @@ a:active {
   }
 
   #about h1 {
-    /*font-size: 100%;*/
+    font-size: 400%;
   }
 
 /*====================================================
@@ -657,7 +657,7 @@ a:active {
 .skill-item {
     padding: 20px 0;
     margin-bottom: 30px;
-    background: rgba(144, 144, 144, 0.78);
+    background: rgba(144, 144, 144, 0.40);
 }
 
 .skill-item i {

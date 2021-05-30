@@ -31,3 +31,11 @@
   background-color: rgba(0,0,0,0);
   border-radius: .25rem;
 }
+
+#cv_download {
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}

@@ -6,11 +6,11 @@ $('.post_loader').addClass('wow animated fadeIn');
 
 setTimeout(function() {
 	$('body').addClass('loaded');
+	$('nav').css('display','');
+	$('.container-fluid').css('display','');
+	$('.post_loader').css('display', '');
 	setTimeout(function() {
-		$('nav').css('display','');
-		$('.container-fluid').css('display','');
-		$('.post_loader').css('display', '');
-	},500);
-	$('nav').css('visibility','');
-	$('.container-fluid').css('visibility','');
-},500);
+		$('nav').css('visibility','');
+		$('.container-fluid').css('visibility','');
+	},1000);
+},1000);

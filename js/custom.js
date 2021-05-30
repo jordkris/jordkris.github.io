@@ -88,3 +88,12 @@ function default_box(elm) {
   $('#'+id).css('border','');
   $('#'+id).css('transform','');
 }
+
+$(".skill-item").each(function(){
+  $(this).on( "mouseenter", function() {
+    $(this).addClass( "wow animated fadeIn" );
+  }).on( "mouseleave", function() {
+    $(this).removeClass( "wow animated fadeIn" );
+  });
+});
+
