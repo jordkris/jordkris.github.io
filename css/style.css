@@ -183,7 +183,7 @@ a:active {
   }
 
   section.resume-section .resume-item .resume-date {
-      min-width: none;
+      min-width: 0px;
   }
 
   @media (min-width: 768px) {
@@ -744,7 +744,7 @@ a:active {
   text-align: center;
   margin-right: 10px;
   border-radius: 50%;
-}  
+}
 
 @media(max-width: 767px){
     #contact-p2 .con-form input{
@@ -779,7 +779,39 @@ a:active {
             text-align: center;
     }    
 }
- 
+
+/*====================================================
+                      POSTS
+======================================================*/
+
+#posts {
+    overflow: hidden;
+    position: relative;
+}
+
+#posts-background {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+}
+
+#posts-content {
+    position: relative;
+}
+
+.post-cover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.post-cover h3{
+    font-family: "hind", sans-serif;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
 .map-responsive{
     overflow:hidden;
     padding-bottom:50%;
