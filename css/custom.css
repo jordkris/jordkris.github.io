@@ -42,7 +42,7 @@
 
 .magic-box {
     height: 100px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: relative;
     border-radius: 20px;
 }
