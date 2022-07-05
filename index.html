@@ -36,6 +36,18 @@
     <!-- Vendor scripts -->
     <script src="https://kit.fontawesome.com/5e59a4bfec.js" crossorigin="anonymous"></script>
     <script async src="https://cdn.splitbee.io/sb.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N25RM4CG0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-N25RM4CG0W');
+    </script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target="#sideNav" data-offset="20">
@@ -608,7 +620,7 @@
                     </div>
                     <div class="col-lg-12 mt-4">
                         <div class="embed-responsive embed-responsive-21by9">
-                            <iframe class="embed-responsive-item" src="https://app.splitbee.io/public/jordy-k.github.io"></iframe>
+                            <iframe id="frame-splitbee" class="embed-responsive-item"></iframe>
                         </div>
                     </div>
                 </div>
@@ -864,7 +876,16 @@
             $('[data-toggle="tooltip"]').tooltip({
                 animated: 'fade'
             })
-        })
+        });
+
+        $.ajax({
+            url: "https://app.splitbee.io/public/jordy-k.github.io?period=6m",
+            type: "get",
+            crossDomain: true,
+            success: (data) => {
+                // $('#frame-splitbee').
+            }
+        });
     </script>
 </body>
 
