@@ -98,20 +98,52 @@ $(".skill-item").each(function() {
 });
 
 $.getJSON('js/allData.json', (allData) => {
-    allData.experience.forEach((obj) => {
+    $('#profile-logo').attr('src', allData.logoProfile).attr('alt', allData.logoProfile);
+    $('#name').text(allData.name);
+    $('#motto').html(allData.motto);
+    $('#profile-about').html(allData.profileAbout);
+    let last = allData.links.length - 1;
+    allData.links.forEach((obj, i) => {
+        $('#links').html(`
+            <li ${i == last ? 'id="cv_download"' : ''} class="list-inline-item wow ${i == last ? 'swing center' : 'animated zoomIn'}" ${i == last ? 'data-wow-iteration="200"' : ''} data-toggle="tooltip" data-placement="top" title="${obj.title}">
+                <a href="${obj.link}" target="_blank">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x ${i == last ? 'text-success' : ''}"></i>
+                        <i class="${obj.icon} fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+        `);
+    });
+    $('#links').append(`
+        <li id="cv_download" class="list-inline-item wow swing center" data-wow-iteration="200" data-toggle="tooltip" data-placement="top" title="Download My Latest CV">
+            <a href="" target="_blank">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x text-success"></i>
+                    <i class="fas fa-cloud-download-alt fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    `);
+    allData.experience.forEach((obj, i) => {
+        let magicBoxDiv = `
+            <div class="col-lg-4 magic-box">
+                <img class="magic-image" src="${obj.imgLogo}" />
+            </div>
+        `;
+        let jobDetailsDiv = `
+            <div class="col-lg-8">
+                <span class="date">${obj.date}</span>
+                <h5 class="title">${obj.title}</h5>
+                <span class="title text-info">${obj.company}</span>
+            </div>
+        `;
         $('#exp-box').html(`
             <div class="exp">
-                <div id="exp-icon-1" class="exp-icon" onmousemove="rotate_box(this,'v2')" onmouseout="default_box(this)"></div>
-                <div id="exp-box-1" class="exp-content" onmousemove="rotate_box(this,'v2')" onmouseout="default_box(this)">
+                <div id="exp-icon-1" class="exp-icon" onmousemove="rotate_box(this,'v${i%2+1}')" onmouseout="default_box(this)"></div>
+                <div id="exp-box-1" class="exp-content" onmousemove="rotate_box(this,'v${2-i%2}')" onmouseout="default_box(this)">
                     <div class="row">
-                        <div class="col-lg-4 magic-box">
-                            <img class="magic-image" src="${obj.imgLogo}" />
-                        </div>
-                        <div class="col-lg-8">
-                            <span class="date">${obj.date}</span>
-                            <h5 class="title">${obj.title}</h5>
-                            <span class="title text-info">${obj.company}</span>
-                        </div>
+                        ` + i % 2 == 0 ? magicBoxDiv + jobDetailsDiv : jobDetailsDiv + magicBoxDiv + `
                         <div class="col-lg-12">
                             <p class="description text-justify">${obj.description}</p>
                         </div>
