@@ -103,8 +103,9 @@ $.getJSON('js/allData.json', (allData) => {
     $('#motto').html(allData.motto);
     $('#profile-about').html(allData.profileAbout);
     let last = allData.links.length - 1;
+    $('#links').html('');
     allData.links.forEach((obj, i) => {
-        $('#links').html(`
+        $('#links').append(`
             <li ${i == last ? 'id="cv_download"' : ''} class="list-inline-item wow ${i == last ? 'swing center' : 'animated zoomIn'}" ${i == last ? 'data-wow-iteration="200"' : ''} data-toggle="tooltip" data-placement="top" title="${obj.title}">
                 <a href="${obj.link}" target="_blank">
                     <span class="fa-stack fa-lg">
@@ -115,6 +116,7 @@ $.getJSON('js/allData.json', (allData) => {
             </li>
         `);
     });
+    $('#exp-box').html('');
     allData.experience.forEach((obj, i) => {
         let magicBoxDiv = `
             <div class="col-lg-4 magic-box">
@@ -128,7 +130,7 @@ $.getJSON('js/allData.json', (allData) => {
                 <span class="title text-info">${obj.company}</span>
             </div>
         `;
-        $('#exp-box').html(`
+        $('#exp-box').append(`
             <div class="exp">
                 <div id="exp-icon-1" class="exp-icon" onmousemove="rotate_box(this,'v${i%2+1}')" onmouseout="default_box(this)"></div>
                 <div id="exp-box-1" class="exp-content" onmousemove="rotate_box(this,'v${2-i%2}')" onmouseout="default_box(this)">
