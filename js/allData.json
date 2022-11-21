@@ -1,0 +1,9 @@
+{
+    "experience": [{
+        "imgLogo": "./img/logo-kisel.png",
+        "date": "January 2020 - February 2020",
+        "title": "IT Staff Internship",
+        "company": "Kisel Central Java & DIY",
+        "description": "Develop EFS Website using HTML, CSS, Javascript, PHP, and CodeIgniter Framework. <br /> Manage and archive EFS hard file and soft file."
+    }]
+}
