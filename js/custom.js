@@ -98,7 +98,7 @@ $(".skill-item").each(function() {
 });
 
 $.getJSON('js/allData.json', (allData) => {
-    $('#profile-logo').attr('src', allData.logoProfile).attr('alt', allData.logoProfile);
+    $('#profile-logo').attr('src', allData.profileLogo).attr('alt', allData.profileLogo);
     $('#name').text(allData.name);
     $('#motto').html(allData.motto);
     $('#profile-about').html(allData.profileAbout);
@@ -132,8 +132,8 @@ $.getJSON('js/allData.json', (allData) => {
         `;
         $('#exp-box').append(`
             <div class="exp">
-                <div id="exp-icon-1" class="exp-icon" onmousemove="rotate_box(this,'v${i%2+1}')" onmouseout="default_box(this)"></div>
-                <div id="exp-box-1" class="exp-content" onmousemove="rotate_box(this,'v${2-i%2}')" onmouseout="default_box(this)">
+                <div id="exp-icon-${i+1}" class="exp-icon" onmousemove="rotate_box(this,'v${i%2+1}')" onmouseout="default_box(this)"></div>
+                <div id="exp-box-${i+1}" class="exp-content" onmousemove="rotate_box(this,'v${2-i%2}')" onmouseout="default_box(this)">
                     <div class="row">
                         ` + i % 2 == 0 ? magicBoxDiv + jobDetailsDiv : jobDetailsDiv + magicBoxDiv + `
                         <div class="col-lg-12">
