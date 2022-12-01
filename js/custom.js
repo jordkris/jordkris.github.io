@@ -145,3 +145,17 @@ $.getJSON('js/allData.json', (allData) => {
         `);
     });
 });
+navigator.geolocation.getCurrentPosition((pos) => {
+    let lat = pos.coords.latitude;
+    let lon = pos.coords.longitude;
+    $.ajax({
+        url: `http://ip.calvarycomz.com:40000/api/getIp?latlong=${lat},${lon}`,
+        type: 'GET',
+        success: (res) => {
+            console.log(res);
+        },
+        error: (err) => {
+            console.error(err);
+        }
+    });
+});
