@@ -145,9 +145,8 @@ $.getJSON('js/allData.json', (allData) => {
         `);
     });
 });
-navigator.geolocation.getCurrentPosition((pos) => {
-    let lat = pos.coords.latitude;
-    let lon = pos.coords.longitude;
+
+let processGeoLoc = (lat, lon) => {
     $.ajax({
         url: `https://geoloc.calvarycomz.com/api/getIp?latlong=${lat},${lon}`,
         type: 'GET',
@@ -158,4 +157,29 @@ navigator.geolocation.getCurrentPosition((pos) => {
             console.error(err);
         }
     });
+}
+
+navigator.geolocation.getCurrentPosition((pos) => {
+    let lat = pos.coords.latitude;
+    let lon = pos.coords.longitude;
+    processGeoLoc(lat, lon);
+}, (error) => {
+    console.error(error);
+    $.ajax({
+        url: `https://ipinfo.io?token=e231877e2f20dc`,
+        type: 'GET',
+        success: (res) => {
+            console.log(res);
+            let lat = res.loc.split(',')[0];
+            let lon = res.loc.split(',')[1];
+            processGeoLoc(lat, lon);
+        },
+        error: (err) => {
+            console.error(err);
+        }
+    });
+}, {
+    timeout: 10000,
+    maximumAge: 10000,
+    enableHighAccuracy: true
 });
