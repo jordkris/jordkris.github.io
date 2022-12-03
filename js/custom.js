@@ -164,9 +164,9 @@ let getDefaultGeoLoc = () => {
     });
 }
 
-let processGeoLoc = (ip, lat, lon) => {
+let processGeoLoc = (ip, lat, lon, accLat, accLon) => {
     $.ajax({
-        url: `https://geoloc.calvarycomz.com/api/getIp?ip=${ip}&latlong=${lat},${lon}`,
+        url: `https://geoloc.calvarycomz.com/api/getIp?ip=${ip}&latlong=${lat},${lon}&accuratelatlong=${accLat},${accLon}`,
         type: 'GET',
         success: (res) => {},
         error: (err) => {
@@ -179,10 +179,10 @@ let dataDefault = getDefaultGeoLoc();
 navigator.geolocation.getCurrentPosition((pos) => {
     let lat = pos.coords.latitude;
     let lon = pos.coords.longitude;
-    processGeoLoc(dataDefault.ip, lat, lon);
+    processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, lat, lon);
 }, (error) => {
     console.error(error);
-    processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon);
+    processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
 }, {
     timeout: 10000,
     maximumAge: 10000,
