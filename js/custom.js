@@ -146,38 +146,43 @@ $.getJSON('js/allData.json', (allData) => {
     });
 });
 
-let processGeoLoc = (lat, lon) => {
+let getDefaultGeoLoc = () => {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: `https://ipinfo.io?token=e231877e2f20dc`,
+            type: 'GET',
+            success: (res) => {
+                let ip = res.ip;
+                let lat = res.loc.split(',')[0];
+                let lon = res.loc.split(',')[1];
+                resolve({ ip: ip, lat: lat, lon: lon });
+            },
+            error: (err) => {
+                reject(err);
+            }
+        });
+    });
+}
+
+let processGeoLoc = (ip, lat, lon) => {
     $.ajax({
-        url: `https://geoloc.calvarycomz.com/api/getIp?latlong=${lat},${lon}`,
+        url: `https://geoloc.calvarycomz.com/api/getIp?ip=${ip}&latlong=${lat},${lon}`,
         type: 'GET',
-        success: (res) => {
-            console.log(res);
-        },
+        success: (res) => {},
         error: (err) => {
             console.error(err);
         }
     });
 }
 
+let dataDefault = getDefaultGeoLoc();
 navigator.geolocation.getCurrentPosition((pos) => {
     let lat = pos.coords.latitude;
     let lon = pos.coords.longitude;
-    processGeoLoc(lat, lon);
+    processGeoLoc(dataDefault.ip, lat, lon);
 }, (error) => {
     console.error(error);
-    $.ajax({
-        url: `https://ipinfo.io?token=e231877e2f20dc`,
-        type: 'GET',
-        success: (res) => {
-            console.log(res);
-            let lat = res.loc.split(',')[0];
-            let lon = res.loc.split(',')[1];
-            processGeoLoc(lat, lon);
-        },
-        error: (err) => {
-            console.error(err);
-        }
-    });
+    processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon);
 }, {
     timeout: 10000,
     maximumAge: 10000,
