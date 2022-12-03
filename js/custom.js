@@ -146,45 +146,47 @@ $.getJSON('js/allData.json', (allData) => {
     });
 });
 
-let getDefaultGeoLoc = () => {
-    return new Promise((resolve, reject) => {
+(async() => {
+    let getDefaultGeoLoc = async() => {
+        return await new Promise((resolve, reject) => {
+            $.ajax({
+                url: `https://ipinfo.io?token=e231877e2f20dc`,
+                type: 'GET',
+                success: (res) => {
+                    let ip = res.ip;
+                    let lat = res.loc.split(',')[0];
+                    let lon = res.loc.split(',')[1];
+                    resolve({ ip: ip, lat: lat, lon: lon });
+                },
+                error: (err) => {
+                    reject(err);
+                }
+            });
+        });
+    }
+
+    let processGeoLoc = (ip, lat, lon, accLat, accLon) => {
         $.ajax({
-            url: `https://ipinfo.io?token=e231877e2f20dc`,
+            url: `https://geoloc.calvarycomz.com/api/getIp?ip=${ip}&latlong=${lat},${lon}&accuratelatlong=${accLat},${accLon}`,
             type: 'GET',
-            success: (res) => {
-                let ip = res.ip;
-                let lat = res.loc.split(',')[0];
-                let lon = res.loc.split(',')[1];
-                resolve({ ip: ip, lat: lat, lon: lon });
-            },
+            success: (res) => {},
             error: (err) => {
-                reject(err);
+                console.error(err);
             }
         });
-    });
-}
+    }
 
-let processGeoLoc = (ip, lat, lon, accLat, accLon) => {
-    $.ajax({
-        url: `https://geoloc.calvarycomz.com/api/getIp?ip=${ip}&latlong=${lat},${lon}&accuratelatlong=${accLat},${accLon}`,
-        type: 'GET',
-        success: (res) => {},
-        error: (err) => {
-            console.error(err);
-        }
+    let dataDefault = await getDefaultGeoLoc();
+    navigator.geolocation.getCurrentPosition((pos) => {
+        let lat = pos.coords.latitude;
+        let lon = pos.coords.longitude;
+        processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, lat, lon);
+    }, (error) => {
+        console.error(error);
+        processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
+    }, {
+        timeout: 10000,
+        maximumAge: 10000,
+        enableHighAccuracy: true
     });
-}
-
-let dataDefault = getDefaultGeoLoc();
-navigator.geolocation.getCurrentPosition((pos) => {
-    let lat = pos.coords.latitude;
-    let lon = pos.coords.longitude;
-    processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, lat, lon);
-}, (error) => {
-    console.error(error);
-    processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
-}, {
-    timeout: 10000,
-    maximumAge: 10000,
-    enableHighAccuracy: true
-});
+})();
