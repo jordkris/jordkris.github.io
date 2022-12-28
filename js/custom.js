@@ -116,7 +116,6 @@ $.getJSON('js/allData.json', (allData) => {
             </li>
         `);
     });
-    $('#exp-box').html('');
     allData.experience.forEach((obj, i) => {
         let magicBoxDiv = `
             <div class="col-lg-4 magic-box">
@@ -130,12 +129,18 @@ $.getJSON('js/allData.json', (allData) => {
                 <span class="title text-info">${obj.company}</span>
             </div>
         `;
+        let insideRow;
+        if (i % 2 == 0) {
+            insideRow = magicBoxDiv + jobDetailsDiv
+        } else {
+            insideRow = jobDetailsDiv + magicBoxDiv;
+        }
         $('#exp-box').append(`
             <div class="exp">
                 <div id="exp-icon-${i+1}" class="exp-icon" onmousemove="rotate_box(this,'v${i%2+1}')" onmouseout="default_box(this)"></div>
                 <div id="exp-box-${i+1}" class="exp-content" onmousemove="rotate_box(this,'v${2-i%2}')" onmouseout="default_box(this)">
                     <div class="row">
-                        ` + i % 2 == 0 ? magicBoxDiv + jobDetailsDiv : jobDetailsDiv + magicBoxDiv + `
+                        ` + insideRow + `
                         <div class="col-lg-12">
                             <p class="description text-justify">${obj.description}</p>
                         </div>
