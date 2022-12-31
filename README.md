@@ -1,4 +1,4 @@
-# jordy-k.github.io
+# jordkris.github.io
 
 My Portofolio
 
