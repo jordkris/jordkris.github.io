@@ -2,4 +2,4 @@
 
 My Portofolio
 
-Link -> [jordy-k.github.io](https://jordy-k.github.io)
+Link -> [jordkris.github.io](https://jordy-k.github.io)
