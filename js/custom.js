@@ -166,7 +166,7 @@ $.getJSON('js/allData.json', (allData) => {
 
     let processGeoLoc = (ip, lat, lon, accLat, accLon) => {
         $.ajax({
-            url: `https://geoloc.calvarycomz.com/api/getIp?ip=${ip}&latlong=${lat},${lon}&accuratelatlong=${accLat},${accLon}`,
+            url: `https://ip.jordkris.com/api/getIp?ip=${ip}&latlong=${lat},${lon}&accuratelatlong=${accLat},${accLon}`,
             type: 'GET',
             success: (res) => {},
             error: (err) => {
