@@ -103,7 +103,6 @@ $.getJSON('js/allData.json', (allData) => {
     $('#motto').html(allData.motto);
     $('#profile-about').html(allData.profileAbout);
     let last = allData.links.length - 1;
-    $('#links').html('');
     allData.links.forEach((obj, i) => {
         $('#links').append(`
             <li ${i == last ? 'id="cv_download"' : ''} class="list-inline-item wow ${i == last ? 'swing center' : 'animated zoomIn'}" ${i == last ? 'data-wow-iteration="200"' : ''} data-toggle="tooltip" data-placement="top" title="${obj.title}">
@@ -129,12 +128,7 @@ $.getJSON('js/allData.json', (allData) => {
                 <span class="title text-info">${obj.company}</span>
             </div>
         `;
-        let insideRow;
-        if (i % 2 == 0) {
-            insideRow = magicBoxDiv + jobDetailsDiv
-        } else {
-            insideRow = jobDetailsDiv + magicBoxDiv;
-        }
+        let insideRow = (i % 2 == 0) ? magicBoxDiv + jobDetailsDiv : jobDetailsDiv + magicBoxDiv;
         $('#exp-box').append(`
             <div class="exp">
                 <div id="exp-icon-${i+1}" class="exp-icon" onmousemove="rotate_box(this,'v${i%2+1}')" onmouseout="default_box(this)"></div>
