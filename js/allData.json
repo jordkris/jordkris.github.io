@@ -20,6 +20,10 @@
         "link": "https://gitlab.com/jordkris",
         "icon": "fa fa-gitlab"
     }, {
+        "title": "Stack Overflow",
+        "link": "https://stackoverflow.com/users/12715723/jordy",
+        "icon": "fab fa-stack-overflow"
+    }, {
         "title": "Hackerrank",
         "link": "https://www.hackerrank.com/jordkris",
         "icon": "fab fa-hackerrank"
