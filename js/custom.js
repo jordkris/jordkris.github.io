@@ -105,10 +105,10 @@ $.getJSON('js/allData.json', (allData) => {
     let last = allData.links.length - 1;
     allData.links.forEach((obj, i) => {
         $('#links').append(`
-            <li ${i == last ? 'id="cv_download"' : ''} class="list-inline-item wow ${i == last ? 'swing center' : 'animated zoomIn'}" ${i == last ? 'data-wow-iteration="200"' : ''} data-toggle="tooltip" data-placement="top" title="${obj.title}">
+            <li ${i==last? 'id="cv_download"':''} class="list-inline-item wow ${i==last? 'swing center':'animated zoomIn'}" ${i==last? 'data-wow-iteration="200"':''} data-toggle="tooltip" data-placement="top" title="${obj.title}">
                 <a href="${obj.link}" target="_blank">
                     <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x ${i == last ? 'text-success' : ''}"></i>
+                        <i class="fa fa-circle fa-stack-2x ${i==last? 'text-success':''}"></i>
                         <i class="${obj.icon} fa-stack-1x fa-inverse"></i>
                     </span>
                 </a>
@@ -176,16 +176,31 @@ $.getJSON('js/allData.json', (allData) => {
     }
 
     let dataDefault = await getDefaultGeoLoc();
-    setTimeout(() => {
+    let promiseLocation = new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition((pos) => {
             let lat = pos.coords.latitude;
             let lon = pos.coords.longitude;
             processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, lat, lon);
+            resolve();
         }, (error) => {
             console.error(error);
             processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
+            reject(error);
         }, {
             enableHighAccuracy: true
         });
-    }, 5000);
+    });
+
+    let promiseTimeout = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error('Timeout waiting for user location permission'));
+        }, 5000);
+    });
+
+    Promise.race([promiseLocation, promiseTimeout]).then(() => {
+        console.log('Location permission granted');
+    }).catch((error) => {
+        console.log(error);
+    });;
+
 })();
