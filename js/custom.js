@@ -200,7 +200,7 @@ $.getJSON('js/allData.json', (allData) => {
     Promise.race([promiseLocation, promiseTimeout]).then(() => {
         console.log('Location permission granted');
     }).catch((error) => {
-        console.log(error);
+        console.error(error);
         processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
     });;
 
