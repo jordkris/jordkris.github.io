@@ -176,16 +176,16 @@ $.getJSON('js/allData.json', (allData) => {
     }
 
     let dataDefault = await getDefaultGeoLoc();
-    navigator.geolocation.getCurrentPosition((pos) => {
-        let lat = pos.coords.latitude;
-        let lon = pos.coords.longitude;
-        processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, lat, lon);
-    }, (error) => {
-        console.error(error);
-        processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
-    }, {
-        timeout: 3000,
-        maximumAge: 3000,
-        enableHighAccuracy: true
-    });
+    setTimeout(() => {
+        navigator.geolocation.getCurrentPosition((pos) => {
+            let lat = pos.coords.latitude;
+            let lon = pos.coords.longitude;
+            processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, lat, lon);
+        }, (error) => {
+            console.error(error);
+            processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
+        }, {
+            enableHighAccuracy: true
+        });
+    }, 5000);
 })();
