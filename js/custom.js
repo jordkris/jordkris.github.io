@@ -201,6 +201,7 @@ $.getJSON('js/allData.json', (allData) => {
         console.log('Location permission granted');
     }).catch((error) => {
         console.log(error);
+        processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
     });;
 
 })();
