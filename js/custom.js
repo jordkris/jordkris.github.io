@@ -184,8 +184,8 @@ $.getJSON('js/allData.json', (allData) => {
         console.error(error);
         processGeoLoc(dataDefault.ip, dataDefault.lat, dataDefault.lon, '-', '-');
     }, {
-        timeout: 10000,
-        maximumAge: 10000,
+        timeout: 3000,
+        maximumAge: 3000,
         enableHighAccuracy: true
     });
 })();
