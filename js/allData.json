@@ -3,64 +3,78 @@
     "name": "Jordy Kristianata",
     "motto": "<span class=\"text-success\">IF</span> YOU FAIL, TRY AGAIN - <span class=\"text-danger\">ELSE</span>, KEEP TRY AGAIN - <span class=\"text-primary\">UNTIL</span> NEW BIG IDEA COMES FOR YOU",
     "profileAbout": "I am enthusiastic about the Informatics major especially in mastering the intermediate level of programming language. I enjoy being challenged and engaging with projects that require me to work both inside and outside my comfort and knowledge set. Learning new languages and development techniques is important to me and the success of the organization.",
-    "links": [{
-        "title": "Instagram",
-        "link": "https://www.instagram.com/jordkris",
-        "icon": "fab fa-instagram"
-    }, {
-        "title": "LinkedIn",
-        "link": "https://www.linkedin.com/in/jordy-kristianata",
-        "icon": "fa fa-linkedin"
-    }, {
-        "title": "Github",
-        "link": "https://github.com/jordkris",
-        "icon": "fa fa-github"
-    }, {
-        "title": "Gitlab",
-        "link": "https://gitlab.com/jordkris",
-        "icon": "fa fa-gitlab"
-    }, {
-        "title": "Stack Overflow",
-        "link": "https://stackoverflow.com/users/12715723/jordy",
-        "icon": "fab fa-stack-overflow"
-    }, {
-        "title": "Hackerrank",
-        "link": "https://www.hackerrank.com/jordkris",
-        "icon": "fab fa-hackerrank"
-    }, {
-        "title": "Download My Latest CV",
-        "link": "https://jordy.s-ul.eu/nfIUOZ6Q",
-        "icon": "fas fa-cloud-download-alt"
-    }],
-    "experience": [{
-        "imgLogo": "./img/logo-kisel.png",
-        "date": "January 2020 - February 2020",
-        "title": "IT Staff Internship",
-        "company": "Kisel Central Java & DIY",
-        "description": "Develop EFS Website using HTML, CSS, Javascript, PHP, and CodeIgniter Framework. <br /> Manage and archive EFS hard file and soft file."
-    }, {
-        "imgLogo": "./img/logo-undip.png",
-        "date": "February 2020 - June 2020",
-        "title": "Laboratory Assistant",
-        "company": "Informatics Undip",
-        "description": "Taught Object-Oriented Programming (OOP) in terms of practical use of the Java Language."
-    }, {
-        "imgLogo": "./img/logo-ucc.png",
-        "date": "February 2021 - May 2021",
-        "title": "IT Support Engineer Internship",
-        "company": "Undip Career Center",
-        "description": "Develop and fix bugs of multiple job portal websites using HTML, CSS, Javascript, PHP, Vue.js, and Laravel Framework. <br /> Store and manipulate company data. <br /> Do application testing for every platform."
-    }, {
-        "imgLogo": "./img/logo-bsim.png",
-        "date": "June 2021 - December 2021",
-        "title": "Developer",
-        "company": "PT Bank Sinarmas Tbk",
-        "description": "Handle the integration of Service Oriented Architecture (SOA) in banking transactions. <br /> Handle the integration of Microservices and REST APIs for various internal and external partners of the company."
-    }, {
-        "imgLogo": "./img/logo-bni.png",
-        "date": "December 2021 - Now",
-        "title": "Officer Development Program IT",
-        "company": "PT Bank Negara Indonesia Tbk",
-        "description": "Development program for The Next BNI Hi-Movers (AMGR)"
-    }]
+    "links": [
+        {
+            "title": "Instagram",
+            "link": "https://www.instagram.com/jordkris",
+            "icon": "fab fa-instagram"
+        },
+        {
+            "title": "LinkedIn",
+            "link": "https://www.linkedin.com/in/jordy-kristianata",
+            "icon": "fa fa-linkedin"
+        },
+        {
+            "title": "Github",
+            "link": "https://github.com/jordkris",
+            "icon": "fa fa-github"
+        },
+        {
+            "title": "Gitlab",
+            "link": "https://gitlab.com/jordkris",
+            "icon": "fa fa-gitlab"
+        },
+        {
+            "title": "Stack Overflow",
+            "link": "https://stackoverflow.com/users/12715723/jordy",
+            "icon": "fab fa-stack-overflow"
+        },
+        {
+            "title": "Hackerrank",
+            "link": "https://www.hackerrank.com/jordkris",
+            "icon": "fab fa-hackerrank"
+        },
+        {
+            "title": "Download My Latest CV",
+            "link": "/files/CV_Jordy_Kristianata.pdf",
+            "icon": "fas fa-cloud-download-alt"
+        }
+    ],
+    "experience": [
+        {
+            "imgLogo": "./img/logo-kisel.png",
+            "date": "January 2020 - February 2020",
+            "title": "IT Staff Internship",
+            "company": "Kisel Central Java & DIY",
+            "description": "Develop EFS Website using HTML, CSS, Javascript, PHP, and CodeIgniter Framework. <br /> Manage and archive EFS hard file and soft file."
+        },
+        {
+            "imgLogo": "./img/logo-undip.png",
+            "date": "February 2020 - June 2020",
+            "title": "Laboratory Assistant",
+            "company": "Informatics Undip",
+            "description": "Taught Object-Oriented Programming (OOP) in terms of practical use of the Java Language."
+        },
+        {
+            "imgLogo": "./img/logo-ucc.png",
+            "date": "February 2021 - May 2021",
+            "title": "IT Support Engineer Internship",
+            "company": "Undip Career Center",
+            "description": "Develop and fix bugs of multiple job portal websites using HTML, CSS, Javascript, PHP, Vue.js, and Laravel Framework. <br /> Store and manipulate company data. <br /> Do application testing for every platform."
+        },
+        {
+            "imgLogo": "./img/logo-bsim.png",
+            "date": "June 2021 - December 2021",
+            "title": "Developer",
+            "company": "PT Bank Sinarmas Tbk",
+            "description": "Handle the integration of Service Oriented Architecture (SOA) in banking transactions. <br /> Handle the integration of Microservices and REST APIs for various internal and external partners of the company."
+        },
+        {
+            "imgLogo": "./img/logo-bni.png",
+            "date": "December 2021 - Now",
+            "title": "Officer Development Program IT",
+            "company": "PT Bank Negara Indonesia Tbk",
+            "description": "Development program for The Next BNI Hi-Movers (AMGR)"
+        }
+    ]
 }
